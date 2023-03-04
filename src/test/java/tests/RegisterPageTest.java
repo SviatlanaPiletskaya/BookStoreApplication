@@ -30,23 +30,4 @@ public class RegisterPageTest extends BaseTest {
         Assert.assertEquals(registerPage.getCurrentURL(), expectedURL);
     }
 
-//    @Test
-//    public void testCreatingNewAccountWithoutCaptcha() {
-//        final String expectedURL = "https://demoqa.com/register";
-//
-//        RegisterPage registerPage = openBaseURL()
-//                .scrollByNewUserButton()
-//                .clickNewUserButtonOnLoginPage()
-//                .scrollByCaptchaButton()
-//                .clickReCaptchaCheckbox()
-//                .inputFirstNameInRegister("Test")
-//                .inputLastNameInRegister("Test")
-//                .inputUserNameInRegister("test")
-//                .inputPasswordInRegister("1000Test!!")
-//                .scrollByRegisterButton()
-//                .clickRegisterButton();
-//
-//        Assert.assertEquals(registerPage.getCurrentURL(), expectedURL);
-//    }
-
 }

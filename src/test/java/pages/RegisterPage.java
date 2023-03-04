@@ -25,9 +25,6 @@ public class RegisterPage extends BasePage{
     @FindBy(xpath = "//button[@id=\"register\"]")
     private WebElement buttonRegister;
 
-    @FindBy(xpath = "//*[@id=\"recaptcha-anchor\"]/div[3]")
-    private WebElement reCaptchaCheckbox;
-
 
     protected RegisterPage(WebDriver driver) {
         super(driver);
@@ -63,11 +60,6 @@ public class RegisterPage extends BasePage{
         return this;
     }
 
-    public RegisterPage clickReCaptchaCheckbox() {
-        click(reCaptchaCheckbox);
-
-        return this;
-    }
 
     public String getErrorMessageAboutCaptcha(){
 
@@ -81,11 +73,5 @@ public class RegisterPage extends BasePage{
         return this;
     }
 
-    public RegisterPage scrollByCaptchaButton() {
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("arguments[0].scrollIntoView();", reCaptchaCheckbox);
-
-        return this;
-    }
 
 }

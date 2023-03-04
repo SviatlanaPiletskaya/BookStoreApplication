@@ -31,6 +31,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath="//button[@id=\"newUser\"]")
     private WebElement buttonNewUser;
 
+    @FindBy(xpath="//*[@class=\"main-header\"]")
+    private WebElement mainHeader;
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -94,6 +97,11 @@ public class LoginPage extends BasePage {
         js.executeScript("arguments[0].scrollIntoView();", buttonNewUser);
 
         return this;
+    }
+
+    public String getHeaderName(){
+
+        return getText(mainHeader);
     }
 
 }

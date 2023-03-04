@@ -13,6 +13,9 @@ public class ProfilePage extends BasePage{
     @FindBy(xpath = "//button[@id=\"submit\"]")
     private WebElement logOutButtonOnPageProfile;
 
+    @FindBy(xpath = "//*[@class=\"main-header\"]")
+    private WebElement mainHeader;
+
     public ProfilePage(WebDriver driver) {
         super(driver);
     }
@@ -20,6 +23,11 @@ public class ProfilePage extends BasePage{
     public String getValueUserNameProfile(){
 
         return getText(userNameProfile);
+    }
+
+    public String getHeaderName(){
+
+        return getText(mainHeader);
     }
 
     public LoginPage clickLogOutButtonOnProfilePage() {
@@ -34,6 +42,7 @@ public class ProfilePage extends BasePage{
 
         return this;
     }
+
 
 
 }

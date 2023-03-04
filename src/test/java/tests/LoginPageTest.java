@@ -7,7 +7,7 @@ import runner.BaseTest;
 
 public class LoginPageTest extends BaseTest {
 
-    @Test //PASS
+    @Test
     public void testInvalidCredentials() {
         // Username and Password Incorrect
         final String expectedErrorMessage = "Invalid username or password!";
@@ -26,7 +26,7 @@ public class LoginPageTest extends BaseTest {
         Assert.assertEquals(loginPage.getCurrentURL(), expectedURL);
     }
 
-    @Test //PASS
+    @Test
     public void testLoginWithoutPassword() {
         // Enter correct username and Incorrect password
         final String expectedErrorMessage = "Invalid username or password!";
@@ -45,7 +45,7 @@ public class LoginPageTest extends BaseTest {
         Assert.assertEquals(loginPage.getCurrentURL(), expectedURL);
     }
 
-    @Test //PASS
+    @Test
     public void testLoginWithoutUsername() {
         // Enter correct password and incorrect username
         final String expectedErrorMessage = "Invalid username or password!";
@@ -64,7 +64,7 @@ public class LoginPageTest extends BaseTest {
         Assert.assertEquals(loginPage.getCurrentURL(), expectedURL);
     }
 
-    @Test //PASS
+    @Test
     public void testLoginWithoutUserNameAndPassword() {
         // Login without date
         final String expectedURL = "https://demoqa.com/login";
@@ -81,6 +81,8 @@ public class LoginPageTest extends BaseTest {
     public void testLogoutFromProfilePage() {
         //  Проверка, что пользователь перенаправлен на страницу логина после разлогинивания
         final String expectedURL = "https://demoqa.com/login";
+        final String expectedHeaderName = "Login";
+        final String expectedUrl = "https://demoqa.com/login";
 
         LoginPage loginPage = openBaseURL()
                 .clickLoginButton()
@@ -94,5 +96,7 @@ public class LoginPageTest extends BaseTest {
         String actualURL = loginPage.getCurrentURL();
 
         Assert.assertEquals(actualURL, expectedURL);
+        Assert.assertEquals(loginPage.getHeaderName(), expectedHeaderName);
+        Assert.assertEquals(loginPage.getCurrentURL(), expectedUrl);
     }
 }
